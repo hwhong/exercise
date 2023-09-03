@@ -18,6 +18,7 @@ export const DICTIONARY = [
   "glutamate",
   "twisty",
   "lyricism",
+  "lyricism",
   "peppery",
   "firebird",
   "wuss",
