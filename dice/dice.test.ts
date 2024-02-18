@@ -1,13 +1,5 @@
 import { Dice } from "./dice";
-
-enum SIDE {
-  MAIN = "1",
-  TOP = "3",
-  DOWN = "4",
-  LEFT = "2",
-  RIGHT = "5",
-  ODD = "6",
-}
+import { SIDE } from "./util";
 
 describe("dice", () => {
   const createDice = () => {
@@ -58,7 +50,7 @@ describe("dice", () => {
       expect(main).toBe("5");
     });
 
-    it("test5", () => {
+    it("test6", () => {
       const dice = createDice();
       const main = dice
         .turnRight()

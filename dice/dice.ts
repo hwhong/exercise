@@ -1,19 +1,12 @@
-export class Dice {
-  private main: string;
-  private top: string;
-  private down: string;
-  private left: string;
-  private right: string;
-  private odd: string;
+export class Dice<I> {
+  private main: I;
+  private top: I;
+  private down: I;
+  private left: I;
+  private right: I;
+  private odd: I;
 
-  constructor(
-    main: string,
-    top: string,
-    down: string,
-    left: string,
-    right: string,
-    odd: string
-  ) {
+  constructor(main: I, top: I, down: I, left: I, right: I, odd: I) {
     this.main = main;
     this.top = top;
     this.down = down;
@@ -22,7 +15,7 @@ export class Dice {
     this.odd = odd;
   }
 
-  turnLeft(): Dice {
+  turnLeft(): Dice<I> {
     const oldMain = this.main;
     this.main = this.right;
     this.right = this.odd;
@@ -32,7 +25,7 @@ export class Dice {
     return this;
   }
 
-  turnRight(): Dice {
+  turnRight(): Dice<I> {
     const oldMain = this.main;
     this.main = this.left;
     this.left = this.odd;
@@ -42,7 +35,7 @@ export class Dice {
     return this;
   }
 
-  turnDown(): Dice {
+  turnDown(): Dice<I> {
     const oldMain = this.main;
     this.main = this.top;
     this.top = this.odd;
@@ -51,7 +44,7 @@ export class Dice {
     return this;
   }
 
-  turnUp(): Dice {
+  turnUp(): Dice<I> {
     const oldMain = this.main;
     this.main = this.down;
     this.down = this.odd;
@@ -60,11 +53,11 @@ export class Dice {
     return this;
   }
 
-  getMain(): string {
+  getMain(): I {
     return this.main;
   }
 
-  getOdd(): string {
+  getOdd(): I {
     return this.odd;
   }
 }
